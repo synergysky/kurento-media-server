@@ -8,7 +8,6 @@ Build-Depends: debhelper (>= 9),
  kms-cmake-utils (>= 7.0.0),
  kms-core-dev (>= 7.0.0),
  kms-elements-dev (>= 7.0.0),
- kms-filters-dev (>= 7.0.0),
  kurento-module-creator (>= 7.0.0),
  libboost-dev,
  libboost-filesystem-dev,
@@ -39,7 +38,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
  gstreamer1.0-plugins-ugly,
  kms-core (>= 7.0.0),
  kms-elements (>= 7.0.0),
- kms-filters (>= 7.0.0),
  libgstreamer-plugins-base1.0-0
 Suggests: kurento-dbg
 Description: Kurento Media Server
@@ -54,7 +52,6 @@ Depends: kurento-media-server (= ${binary:Version}),
  kms-cmake-utils (>= 7.0.0),
  kms-core-dev (>= 7.0.0),
  kms-elements-dev (>= 7.0.0),
- kms-filters-dev (>= 7.0.0),
  kurento-module-creator (>= 7.0.0),
  libboost-log-dev,
  libboost-program-options-dev,
@@ -70,8 +67,7 @@ Section: debug
 Depends: kurento-media-server (= ${binary:Version}),
  ${misc:Depends},
  kms-core-dbg,
- kms-elements-dbg,
- kms-filters-dbg
+ kms-elements-dbg
 Description: Kurento Media Server
  Debugging symbols.
 
@@ -94,7 +90,6 @@ Depends: ${misc:Depends},
  kms-jsonrpc-dbg,
  kms-core-dbg,
  kms-elements-dbg,
- kms-filters-dbg,
  kurento-media-server-dbg
 Description: Meta-package that installs debug symbols
  This dummy package depends on all debug packages for Kurento Media Server
