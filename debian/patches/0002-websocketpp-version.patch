@@ -1,0 +1,10 @@
+diff --git a/server/transport/websocket/CMakeLists.txt b/server/transport/websocket/CMakeLists.txt
+index 1eb2215..10713e4 100644
+--- a/server/transport/websocket/CMakeLists.txt
++++ b/server/transport/websocket/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-find_package(websocketpp 0.7.0 REQUIRED)
++find_package(websocketpp 0.8.2 REQUIRED)
+ 
+ set (WEBSOCKET_SOURCES
+   WebSocketTransport.cpp
