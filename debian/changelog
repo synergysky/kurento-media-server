@@ -1,3 +1,10 @@
+kurento-media-server (7.0.0-1~debify11+2) debify-bullseye; urgency=medium
+
+  * Patch for JSON CEE.
+  * Patch for MIPS and s390x builds.
+
+ -- Daniel Pocock <daniel@pocock.pro>  Thu, 09 Sep 2021 19:16:25 +0200
+
 kurento-media-server (7.0.0-1~debify11+1) debify-bullseye; urgency=medium
 
   * Build for debify-bullseye.
