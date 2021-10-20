@@ -1,3 +1,9 @@
+kurento-media-server (7.0.0-1~debify11pexip+3) pexip-bullseye; urgency=medium
+
+  * Build for pexip-bullseye.
+
+ -- Daniel Pocock <daniel@pocock.pro>  Wed, 20 Oct 2021 03:58:14 +0200
+
 kurento-media-server (7.0.0-1~debify11pexip+2) pexip-bullseye; urgency=medium
 
   * Build for pexip-bullseye.
