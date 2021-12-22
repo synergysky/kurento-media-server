@@ -587,15 +587,17 @@ void DeathHandler::SignalHandler (int sig, void * /* info */, void *secret)
   Safe::print2stderr ("\nStack trace:\n");
   void **trace = reinterpret_cast<void **> (memory);
   memory += (frames_count_ + 2) * sizeof (void *);
+  int trace_size = backtrace (trace, frames_count_ + 2);
+
   // Workaround malloc() inside backtrace()
+  /*
   void * (*oldMallocHook) (size_t, const void *) = __malloc_hook;
   void (*oldFreeHook) (void *, const void *) = __free_hook;
   __malloc_hook = MallocHook;
   __free_hook = NULL;
-  int trace_size = backtrace (trace, frames_count_ + 2);
   __malloc_hook = oldMallocHook;
   __free_hook = oldFreeHook;
-
+  */
   if (trace_size <= 2) {
     safe_abort();
   }
@@ -603,7 +605,7 @@ void DeathHandler::SignalHandler (int sig, void * /* info */, void *secret)
   // Overwrite sigaction with caller's address
 #if defined(__arm__)
   trace[1] = reinterpret_cast<void *> (uc->uc_mcontext.arm_pc);
-#elif defined(__aarch64__)     
+#elif defined(__aarch64__)
   trace[1] = reinterpret_cast<void *> (uc->uc_mcontext.pc);
 #else
 #if !defined(__i386__) && !defined(__x86_64__)
