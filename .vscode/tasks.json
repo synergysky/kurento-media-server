@@ -1,0 +1,22 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo ${workspaceFolder}"
+        },
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "command": "/usr/bin/cmake --build /home/vagrant/app.thirdpartybuild/ssky_kurento/kurento-media-server/build --config Debug --target kurento-media-server -j 4 --"
+        },
+        {
+            "label" : "sourceKurentoConfig",
+            "type": "shell",
+            "command": ". /etc/default/kurento-media-server"
+        }
+    ]
+}

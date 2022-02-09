@@ -1,0 +1,64 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/server/kurento-media-server",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            // "environment": [{"name":"GST_DEBUG", "value":"'6,Kurento*:4,kms*:4,sdp*:4,webrtc*:4,*rtpendpoint:4,rtp*handler:4,rtpsynchronizer:4,agnosticbin:4'"}],
+            "externalConsole": false,
+            // "console": "internalConsole",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "showOutput": "always",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "sourceKurentoConfig"
+        }
+    ]
+}
+
+
+
+// {
+//     "name": "(gdb) Launch",
+//     "type": "cppdbg",
+//     "request": "launch",
+//     "program": "${workspaceFolder}/build/kurento-media-server/server/kurento-media-server",
+//     "args": [
+//         "--conf-file=${workspaceFolder}/build/config/kurento.conf.json",
+//         "--modules-config-path=${workspaceFolder}/build/config",
+//         "--modules-path=${workspaceFolder}/build:/usr/lib/x86_64-linux-gnu/kurento/modules",
+//         "--gst-plugin-path=/home/sebastian/gst_buildoutput/lib64"
+//     ],
+//     "stopAtEntry": false,
+//     "cwd": "${fileDirname}",
+//     "environment": [{"name":"GST_DEBUG", "value":"'6,Kurento*:4,kms*:4,sdp*:4,webrtc*:4,*rtpendpoint:4,rtp*handler:4,rtpsynchronizer:4,agnosticbin:4'"}],
+//     "externalConsole": false,
+//     "MIMode": "gdb",
+//     "miDebuggerPath": "/usr/bin/gdb",
+//     "setupCommands": [
+//         {
+//             "description": "Enable pretty-printing for gdb",
+//             "text": "-enable-pretty-printing",
+//             "ignoreFailures": true
+//         }
+//     ]
+// }
